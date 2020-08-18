@@ -4,7 +4,6 @@ osx_image: xcode11.3.1
 env:
   matrix:
     - TEST_SDK=iphonesimulator13.3 OS=13.3 NAME='iPhone 11 Pro Max'
-    - TEST_SDK=iphonesimulator13.31 OS=13.3 NAME='iPhone 7'
 
 script:
   - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project SwiftyLib.xcodeproj -scheme SwiftyLib -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
